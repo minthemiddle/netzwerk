@@ -27,8 +27,8 @@ class ContactUpdateRequest extends FormRequest
     {
         return [
             'firstname' => 'required|string|max:40',
-            'lastname' => 'sometimes|string|max:60',
-            'email' => 'sometimes|email|max:80',
+            'lastname' => 'nullable|string|max:60',
+            'email' => ['nullable', 'email', 'max:80'],
             'priority' => ['required', 'integer', new EnumValue(Priority::class, false)],
         ];
     }

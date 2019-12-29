@@ -27,8 +27,8 @@ class ContactStoreRequest extends FormRequest
     {
         return [
             'firstname' => 'required|string|max:40',
-            'lastname' => 'sometimes|string|max:60',
-            'email' => 'sometimes|email|max:80|unique:contacts,email',
+            'lastname' => 'nullable|string|max:60',
+            'email' => 'nullable|email|max:80|unique:contacts,email',
             'priority' => ['required', 'integer', new EnumValue(Priority::class, false)],
         ];
     }
