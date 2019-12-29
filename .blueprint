@@ -1,0 +1,7 @@
+created:
+    - database/migrations/2019_12_29_154822_create_contacts_table.php
+    - app/Contact.php
+    - database/factories/ContactFactory.php
+    - app/Http/Controllers/ContactController.php
+updated:
+    - routes/web.php

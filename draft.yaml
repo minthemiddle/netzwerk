@@ -1,0 +1,37 @@
+models:
+  Contact:
+    firstname: string:40
+    lastname: string:60
+    email: string:80 unique
+    birthdate: date
+    published_at: nullable timestamp
+    priority: integer
+
+controllers:
+  Contact:
+    index:
+      query: all
+      render: contact.index with:contacts
+
+    create:
+      render: contact.create
+
+    store:
+      validate: firstname, lastname, email, priority, birthdate
+      save: contact
+      flash: contact.title
+      redirect: contact.index
+
+    show:
+      render: contact.show
+
+    edit:
+      render: contact.edit
+
+    update:
+      validate: firstname, lastname, email, priority, birthdate
+      update: contact
+      redirect: contact.index
+
+    destroy:
+      delete: contact
