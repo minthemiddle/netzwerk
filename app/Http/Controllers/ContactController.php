@@ -52,7 +52,8 @@ class ContactController extends Controller
     public function show(Request $request, Contact $contact)
     {
         $priorities = Priority::toSelectArray();
-        return view('contact.edit', compact('contact', 'priorities'));
+        $notes = $contact->notes()->get();
+        return view('contact.edit', compact('contact', 'priorities', 'notes'));
     }
 
     /**
@@ -63,7 +64,8 @@ class ContactController extends Controller
     public function edit(Request $request, Contact $contact)
     {
         $priorities = Priority::toSelectArray();
-        return view('contact.edit', compact('contact', 'priorities'));
+        $notes = $contact->notes()->get();
+        return view('contact.edit', compact('contact', 'priorities', 'notes'));
     }
 
     /**

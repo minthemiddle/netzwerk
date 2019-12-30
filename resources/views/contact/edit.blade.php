@@ -50,6 +50,16 @@
 
     </form>
 
+    @if ($notes)
+    <div class="mt-4">
+        <ul class="list-disc">
+            @foreach ($notes as $note)
+            <li>{{ $note->body }}</li>
+            @endforeach
+        </ul>
+    </div>
+    @endif
+
     <div class="mt-4">
         <form action="{{ route('note.store') }}" method="POST">
             @csrf
