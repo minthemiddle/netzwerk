@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Note;
 use App\Enums\Priority;
 use Illuminate\Database\Eloquent\Model;
 
@@ -46,5 +47,10 @@ class Contact extends Model
     public function getPriorityDescriptionAttribute()
     {
         return Priority::getDescription($this->priority);
+    }
+
+    public function notes()
+    {
+        return $this->hasMany(Note::class);
     }
 }
