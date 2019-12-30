@@ -37,6 +37,7 @@ class NoteController extends Controller
     public function store(NoteStoreRequest $request)
     {
         Note::create($request->validated());
+        return back();
     }
 
     /**
