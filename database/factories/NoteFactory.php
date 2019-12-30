@@ -9,6 +9,6 @@ $factory->define(App\Note::class, function (Faker $faker) {
     return [
         'contact_id' => 1,
         'type' => NoteType::Interaction,
-        'body' => $faker->sentences(2),
+        'body' => 'Long sentence',
     ];
 });
