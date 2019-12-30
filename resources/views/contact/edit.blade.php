@@ -49,4 +49,14 @@
     </div>
 
     </form>
+
+    <div class="mt-4">
+        <form action="{{ route('note.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="contact_id" value="{{ $contact->id }}">
+            <input type="hidden" name="type" value="0">
+            <textarea name="body" class="form-textarea block" cols="30" rows="10"></textarea>
+            <button type="submit" class="mt-2 p-2 bg-blue-200">Add note</button>
+        </form>
+    </div>
 @endsection
