@@ -27,6 +27,21 @@ class NoteControllerTest extends TestCase
         $this->assertDatabaseHas('notes', $this->noteData($contact));
     }
 
+    /** @test */
+    public function user_can_show_edit_note_view()
+    {
+        $this->withoutExceptionHandling();
+        $user = factory(User::class)->create();
+        $contact = factory(Contact::class)->create();
+        $note = factory(Note::class)->create([
+            'contact_id' => $contact->id,
+        ]);
+
+        $response = $this->actingAs($user)->get(route('note.edit', $note->id));
+        $response->assertViewIs('note.edit');
+        $response->assertSee($note->body);
+    }
+
     public function noteData($contact) {
         return [
             'contact_id' => $contact->id,
