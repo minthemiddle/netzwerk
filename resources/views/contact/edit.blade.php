@@ -54,7 +54,7 @@
     <div class="mt-4">
         <ul class="list-disc">
             @foreach ($notes as $note)
-            <li>@svg('edit'): {{ $note->body }} <span class="text-xs text-gray-600"> {{ $note->created_at->diffForHumans() }}</span></li>
+            <li><a href="{{ route('note.edit', $note->id) }}">@svg('edit')</a>: {{ $note->body }} <span class="text-xs text-gray-600"> {{ $note->created_at->diffForHumans() }}</span></li>
             @endforeach
         </ul>
     </div>
