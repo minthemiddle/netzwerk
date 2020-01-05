@@ -23,3 +23,9 @@ if (mix.inProduction()) {
    .version()
    .purgeCss();
 }
+
+mix.browserSync({
+   proxy: 'netzwerk.test',
+   host: 'netzwerk.test',
+   open: 'external'
+});
