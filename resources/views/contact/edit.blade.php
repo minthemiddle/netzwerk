@@ -53,8 +53,9 @@
     @if ($notes)
     @foreach ($notes as $note)
     <div class="mt-4">
-         <div>
-         <a href="{{ route('note.edit', $note->id) }}">@svg('edit')</a>: <span class="text-xs text-gray-600"> {{ $note->created_at->diffForHumans() }}</span>
+         <div class="flex items-center text-xs text-gray-700">
+         <a href="{{ route('note.edit', $note->id) }}">@svg('edit')</a>
+         <p class="ml-1">{{ $note->created_at->diffForHumans() }}</p>
          </div>
          <div class="mt-2">
          <textarea class="form-textarea" name="" id="" cols="30" readonly>{{ $note->body }}</textarea>
