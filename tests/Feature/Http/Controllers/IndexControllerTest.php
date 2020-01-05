@@ -13,6 +13,6 @@ class IndexControllerTest extends TestCase
     {
         $response = $this->get(route('index'));
         $response->assertSuccessful();
-        $response->assertSee('Landing Page');
+        $response->assertSee('Login');
     }
 }
