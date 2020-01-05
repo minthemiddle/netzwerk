@@ -14,11 +14,12 @@
 </head>
 <body class="bg-gray-100 h-screen antialiased leading-none font-serif">
     <div id="app">
-        <nav class="bg-gray-300 shadow mb-8 py-6">
+        <nav class="bg-gray-600 shadow mb-8 py-6">
             <div class="container mx-auto px-6 md:px-0">
                 <div class="flex items-center justify-center">
                     <div class="mr-6">
-                        <a href="{{ route('contact.index') }}" class="text-lg font-semibold text-gray-600 no-underline">
+                        <img src="/img/brand/inten-logo.png" class="inline w-8 h-auto" alt="">
+                        <a href="{{ route('contact.index') }}" class="text-lg font-semibold text-white no-underline">
                             {{ config('app.name', 'Laravel') }}
                         </a>
                     </div>
