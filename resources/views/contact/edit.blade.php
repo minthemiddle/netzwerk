@@ -50,6 +50,16 @@
 
     </form>
 
+    <div class="mt-4">
+        <form action="{{ route('note.store') }}" method="POST">
+            @csrf
+            <input type="hidden" name="contact_id" value="{{ $contact->id }}">
+            <input type="hidden" name="type" value="0">
+            <textarea name="body" class="form-textarea block" cols="30" rows="6"></textarea>
+            <button type="submit" class="mt-2 p-2 bg-blue-200">Add note</button>
+        </form>
+    </div>
+
     @if ($notes)
     @foreach ($notes as $note)
     <div class="mt-4">
@@ -64,16 +74,6 @@
     </div>
     @endforeach
     @endif
-
-    <div class="mt-4">
-        <form action="{{ route('note.store') }}" method="POST">
-            @csrf
-            <input type="hidden" name="contact_id" value="{{ $contact->id }}">
-            <input type="hidden" name="type" value="0">
-            <textarea name="body" class="form-textarea block" cols="30" rows="10"></textarea>
-            <button type="submit" class="mt-2 p-2 bg-blue-200">Add note</button>
-        </form>
-    </div>
 @endsection
 @section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
