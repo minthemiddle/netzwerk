@@ -71,7 +71,8 @@ class NoteController extends Controller
      */
     public function update(Request $request, Note $note)
     {
-        //
+        Note::find($note->id)->update($request->all());
+        return back();
     }
 
     /**

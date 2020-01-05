@@ -13,6 +13,7 @@
 
     <div class="mt-4">
         <form action="{{ route('note.update', $note->id) }}" method="POST">
+            @method('patch')
             @csrf
             <input type="hidden" name="contact_id" value="{{ $note->contact_id }}">
             <input type="hidden" name="type" value="0">
