@@ -18,7 +18,6 @@ class NoteControllerTest extends TestCase
     /** @test */
     public function user_can_add_note_to_contact()
     {
-        $this->withoutExceptionHandling();
         $user = factory(User::class)->create();
         $contact = factory(Contact::class)->create();
 
@@ -30,7 +29,6 @@ class NoteControllerTest extends TestCase
     /** @test */
     public function user_can_show_edit_note_view()
     {
-        $this->withoutExceptionHandling();
         $user = factory(User::class)->create();
         $contact = factory(Contact::class)->create();
         $note = factory(Note::class)->create([

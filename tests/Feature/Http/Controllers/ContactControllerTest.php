@@ -15,7 +15,6 @@ class ContactControllerTest extends TestCase
     /** @test */
     public function user_can_see_list_of_notes_for_contact()
     {
-        $this->withoutExceptionHandling();
         $user = factory(User::class)->create();
         $contact = factory(Contact::class)->create();
         $note = factory(Note::class)->create();
