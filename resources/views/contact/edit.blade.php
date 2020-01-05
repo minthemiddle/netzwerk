@@ -74,3 +74,10 @@
         </form>
     </div>
 @endsection
+@section('scripts')
+<script src="https://cdn.jsdelivr.net/npm/autosize@4.0.2/dist/autosize.min.js"></script>
+<script>
+autosize(document.querySelectorAll('textarea'));
+</script>
+
+@endsection
