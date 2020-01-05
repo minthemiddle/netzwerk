@@ -51,13 +51,17 @@
     </form>
 
     @if ($notes)
+    @foreach ($notes as $note)
     <div class="mt-4">
-        <ul class="list-disc">
-            @foreach ($notes as $note)
-            <li><a href="{{ route('note.edit', $note->id) }}">@svg('edit')</a>: {{ $note->body }} <span class="text-xs text-gray-600"> {{ $note->created_at->diffForHumans() }}</span></li>
-            @endforeach
-        </ul>
+         <div>
+         <a href="{{ route('note.edit', $note->id) }}">@svg('edit')</a>: <span class="text-xs text-gray-600"> {{ $note->created_at->diffForHumans() }}</span>
+         </div>
+         <div class="mt-2">
+         <textarea class="form-textarea" name="" id="" cols="30" readonly>{{ $note->body }}</textarea>
+         </div>
+
     </div>
+    @endforeach
     @endif
 
     <div class="mt-4">
