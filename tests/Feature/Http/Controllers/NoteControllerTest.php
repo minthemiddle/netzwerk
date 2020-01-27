@@ -59,6 +59,16 @@ class NoteControllerTest extends TestCase
         ]);
     }
 
+    /** @test */
+    public function user_can_delete_note()
+    {
+        $note = factory(Note::class)->create();
+        $user = factory(User::class)->create();
+
+        $this->actingAs($user)->delete(route('note.destroy', $note));
+        $this->assertDatabaseMissing('notes', $note->toArray());
+    }
+
     public function noteData($contact) {
         return [
             'contact_id' => $contact->id,
