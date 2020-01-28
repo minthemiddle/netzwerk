@@ -65,6 +65,11 @@
     <div class="mt-4">
          <div class="flex items-center text-xs text-gray-700">
          <a href="{{ route('note.edit', $note->id) }}">@svg('edit')</a>
+         <form action="{{ route('note.destroy', $note) }}" method="POST">
+            <input type="hidden" name="_method" value="DELETE">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <button type="submit">@svg('trash-2')</button>
+         </form>
          <p class="ml-1">{{ $note->created_at->diffForHumans() }}</p>
          </div>
          <div class="mt-2">
